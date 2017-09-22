@@ -1,0 +1,15 @@
+OUTPUT_FORMAT("elf32-i386", "elf32-i386", "elf32-i386")
+OUTPUT_ARCH(i386)
+ENTRY(_start)
+
+SECTIONS
+{
+	. = 0;
+	.padding	: { *(.padding) }
+	. = 495;
+	.header		: { *(.header) }
+	. = 616;
+	.text16 	: { *(.text16) }
+	.text32 	: { *(.text32) }
+	_end = .;
+}
